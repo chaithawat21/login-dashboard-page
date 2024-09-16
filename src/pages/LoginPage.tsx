@@ -1,8 +1,8 @@
 import { useState, useCallback } from "react";
 import mockData from '../data/mockData.json';
 import '../styles/LoginPage.css'
-import eyeShow from '../assets/eye-show.png'
-import eyeHide from '../assets/eye-hide.png'
+import eyeShow from '../assets/login/eye-show.png'
+import eyeHide from '../assets/login/eye-hide.png'
 import { useAuth } from "../hooks/useAuth";
 import { comparePassword } from "../utils/bcrypt";
 

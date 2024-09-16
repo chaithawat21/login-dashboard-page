@@ -1,20 +1,17 @@
 import { useState, useEffect, useCallback } from "react";
 import mockData from '../data/mockData.json';
+import { User } from '../types/userTypes';
 import '../styles/DashboardPage.css';
-import { useAuth } from "../hooks/useAuth";
-
-interface User {
-  id: number;
-  username: string;
-  password: string;
-  firstname: string;
-  lastname: string;
-  email: string;
-  age: number;
-  position: string;
-  isActive: boolean;
-}
-
+import { useAuth } from '../hooks/useAuth';
+import UserProfile from '../components/UserProfile';
+import Search from '../components/Search';
+import UserList from '../components/UserList';
+import UserDetails from '../components/UserDetails';
+import UserStats from '../components/UserStats';
+import homeIcon from '../assets/dashboard/home.svg'
+import dashboardIcon from '../assets/dashboard/dashboard.svg'
+import settingIcon from '../assets/dashboard/setting.svg'
+import signOutIcon from '../assets/dashboard/sign-out.svg'
 
 const DashboardPage = () => {
   const { loggedInUser, logout } = useAuth();
@@ -50,74 +47,23 @@ const DashboardPage = () => {
   }, []);
 
   return (
-    <div className="container-dashboard">
-      <div className="container-user">
-        <div className="container-user-profile">
-          <h1 className="text-welcome">Welcome to the Dashboard!</h1>
-          <h2 className="text-name">{loggedInUser?.firstname} {loggedInUser?.lastname}</h2>
-          <p className="text-user"><strong>Email:</strong> {loggedInUser?.email}</p>
-          <p className="text-user"><strong>Position:</strong> {loggedInUser?.position}</p>
-          <p className="text-user"><strong>Age:</strong> {loggedInUser?.age}</p>
-          <p><strong>Status:</strong> {selectedUser?.isActive ? 'Active' : 'Inactive'}</p>
+    <main className="container-dashboard">
+      <nav className="nav-dashboard">
+        <div className="nav-menu">
+        <img src={homeIcon} alt="home" className="img-home" />
+        <img src={dashboardIcon} alt="dashboard" className="img-dashboard" />
+        <img src={settingIcon} alt="setting" className="img-setting" />
         </div>
-        <button onClick={logout} className="button-logout">
-          LOGOUT
-        </button>
-      </div>
-      
-      <div className="container-search">
-      {selectedUser && (
-          <div className="container-directory-details">
-            <h2 className="text-search-head">User Profile</h2>
-            <p className="text-search-detail"><strong>Full Name:</strong> {selectedUser.firstname} {selectedUser.lastname}</p>
-            <p className="text-search-detail"><strong>Email:</strong> {selectedUser.email}</p>
-            <p className="text-search-detail"><strong>Position:</strong> {selectedUser.position}</p>
-            <p className="text-search-detail"><strong>Age:</strong> {selectedUser.age}</p>
-          </div>
-        )}
-        <div className="search">
-          <input
-            type="text"
-            placeholder="Search"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="input-search"
-          />
-        </div>
-        <div className="container-directory">
-          {filteredUsers.length > 0 ? (
-            <ul>
-              {filteredUsers.map((user) => (
-                <li 
-                className={`list-directory ${selectedUser?.id === user.id ? 'selected' : ''}`}
-                key={user.id} 
-                onClick={() => handleUserClick(user)}
-                style={{ opacity: user.isActive ? 1 : 0.5 }}
-                
-                >
-                  <h3 className="list-directory-name" >{user.firstname} {user.lastname}</h3>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p className="text-directory-emptry">No users found</p>
-          )}
-        </div>
-      </div>
-      <div className="container-average">
-        <div className="container-total">
-          <h3 className="text-head-total">TOTAL USERS</h3>
-          <p className="text-total">{mockData.users.length}</p>
-        </div>
-        <div className="container-age">
-          <h3 className="text-head-age">AVERAGE AGE OF USERS</h3>
-          <p className="text-age">{averageAge.toFixed(2)}</p>
-        </div>
-      </div>
-
+        <img src={signOutIcon} alt="sign-out" onClick={logout} className="img-logout" />
+      </nav>
+    <UserProfile loggedInUser={loggedInUser} selectedUser={selectedUser} />
+    <div className="container-search">
+      <UserDetails selectedUser={selectedUser} />
+      <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <UserList filteredUsers={filteredUsers} selectedUser={selectedUser} handleUserClick={handleUserClick} />
     </div>
-
-
+    <UserStats totalUsers={users.length} averageAge={averageAge} />
+  </main>
   );
 }
 
