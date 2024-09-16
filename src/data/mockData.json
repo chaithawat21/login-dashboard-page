@@ -8,7 +8,9 @@
         "lastname": "Johnson",
         "email": "alice@gmail.com",
         "age": 25,
-        "position": "Software Engineer"
+        "position": "Software Engineer",
+        "isActive": "true"
+        
       },
       {
         "id": 2,
@@ -18,7 +20,8 @@
         "lastname": "Smith",
         "email": "bob@gmail.com",
         "age": 30,
-        "position": "Project Manager"
+        "position": "Software Engineer",
+        "isActive": "true"
       },
       {
         "id": 3,
@@ -28,7 +31,8 @@
         "lastname": "Brown",
         "email": "charlie@gmail.com",
         "age": 28,
-        "position": "UI/UX Designer"
+        "position": "UI/UX Designer",
+        "isActive": "false"
       },
       {
         "id": 4,
@@ -38,7 +42,8 @@
         "lastname": "Green",
         "email": "daisy@gmail.com",
         "age": 22,
-        "position": "Data Analyst"
+        "position": "Software Engineer",
+        "isActive": "true"
       },
       {
         "id": 5,
@@ -48,7 +53,8 @@
         "lastname": "White",
         "email": "edward@gmail.com",
         "age": 27,
-        "position": "DevOps Engineer"
+        "position": "Software Engineer",
+        "isActive": "true"
       },
       {
         "id": 6,
@@ -58,7 +64,8 @@
         "lastname": "Black",
         "email": "fiona@gmail.com",
         "age": 29,
-        "position": "Backend Developer"
+        "position": "Project Manager",
+        "isActive": "false"
       },
       {
         "id": 7,
@@ -68,7 +75,8 @@
         "lastname": "Miller",
         "email": "george@gmail.com",
         "age": 35,
-        "position": "Full Stack Developer"
+        "position": "Project Manager",
+        "isActive": "true"
       },
       {
         "id": 8,
@@ -78,7 +86,8 @@
         "lastname": "Davis",
         "email": "hannah@gmail.com",
         "age": 24,
-        "position": "Frontend Developer"
+        "position": "Project Manager",
+        "isActive": "true"
       },
       {
         "id": 9,
@@ -88,7 +97,7 @@
         "lastname": "Wilson",
         "email": "ian@gmail.com",
         "age": 32,
-        "position": "Scrum Master"
+        "position": "UI/UX Designer"
       },
       {
         "id": 10,
@@ -98,7 +107,8 @@
         "lastname": "Taylor",
         "email": "julia@gmail.com",
         "age": 26,
-        "position": "Quality Assurance"
+        "position": "Software Engineer",
+        "isActive": "true"
       },
       {
         "id": 11,
@@ -108,7 +118,8 @@
         "lastname": "Brown",
         "email": "kevin@gmail.com",
         "age": 38,
-        "position": "CTO"
+        "position": "Software Engineer",
+        "isActive": "false"
       },
       {
         "id": 12,
@@ -118,7 +129,8 @@
         "lastname": "Adams",
         "email": "lily@gmail.com",
         "age": 23,
-        "position": "Business Analyst"
+        "position": "Software Engineer",
+        "isActive": "false"
       },
       {
         "id": 13,
@@ -128,7 +140,8 @@
         "lastname": "Roberts",
         "email": "michael@gmail.com",
         "age": 40,
-        "position": "Product Manager"
+        "position": "UI/UX Designer",
+        "isActive": "true"
       },
       {
         "id": 14,
@@ -138,7 +151,8 @@
         "lastname": "Martinez",
         "email": "nina@gmail.com",
         "age": 29,
-        "position": "Technical Writer"
+        "position": "UI/UX Designer",
+        "isActive": "false"
       }
     ]
   }
