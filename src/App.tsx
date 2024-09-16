@@ -8,7 +8,7 @@ const App = () => {
   const { isLogin } = useAuth();
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/login-dashboard-page">
       <Routes>
         <Route
           path="/"
