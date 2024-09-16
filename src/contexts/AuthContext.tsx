@@ -8,6 +8,7 @@ interface User {
   email: string;
   age: number;
   position: string;
+  isActive: boolean;
 }
 
 interface AuthContextType {

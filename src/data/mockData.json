@@ -9,7 +9,7 @@
         "email": "alice@gmail.com",
         "age": 25,
         "position": "Software Engineer",
-        "isActive": "true"
+        "isActive": true
         
       },
       {
@@ -21,7 +21,7 @@
         "email": "bob@gmail.com",
         "age": 30,
         "position": "Software Engineer",
-        "isActive": "true"
+        "isActive": true
       },
       {
         "id": 3,
@@ -32,7 +32,7 @@
         "email": "charlie@gmail.com",
         "age": 28,
         "position": "UI/UX Designer",
-        "isActive": "false"
+        "isActive": false
       },
       {
         "id": 4,
@@ -43,7 +43,7 @@
         "email": "daisy@gmail.com",
         "age": 22,
         "position": "Software Engineer",
-        "isActive": "true"
+        "isActive": true
       },
       {
         "id": 5,
@@ -54,7 +54,7 @@
         "email": "edward@gmail.com",
         "age": 27,
         "position": "Software Engineer",
-        "isActive": "true"
+        "isActive": true
       },
       {
         "id": 6,
@@ -65,7 +65,7 @@
         "email": "fiona@gmail.com",
         "age": 29,
         "position": "Project Manager",
-        "isActive": "false"
+        "isActive": false
       },
       {
         "id": 7,
@@ -76,7 +76,7 @@
         "email": "george@gmail.com",
         "age": 35,
         "position": "Project Manager",
-        "isActive": "true"
+        "isActive": true
       },
       {
         "id": 8,
@@ -87,7 +87,7 @@
         "email": "hannah@gmail.com",
         "age": 24,
         "position": "Project Manager",
-        "isActive": "true"
+        "isActive": true
       },
       {
         "id": 9,
@@ -97,7 +97,8 @@
         "lastname": "Wilson",
         "email": "ian@gmail.com",
         "age": 32,
-        "position": "UI/UX Designer"
+        "position": "UI/UX Designer",
+        "isActive": true
       },
       {
         "id": 10,
@@ -108,7 +109,7 @@
         "email": "julia@gmail.com",
         "age": 26,
         "position": "Software Engineer",
-        "isActive": "true"
+        "isActive": true
       },
       {
         "id": 11,
@@ -119,7 +120,7 @@
         "email": "kevin@gmail.com",
         "age": 38,
         "position": "Software Engineer",
-        "isActive": "false"
+        "isActive": false
       },
       {
         "id": 12,
@@ -130,7 +131,7 @@
         "email": "lily@gmail.com",
         "age": 23,
         "position": "Software Engineer",
-        "isActive": "false"
+        "isActive": false
       },
       {
         "id": 13,
@@ -141,7 +142,7 @@
         "email": "michael@gmail.com",
         "age": 40,
         "position": "UI/UX Designer",
-        "isActive": "true"
+        "isActive": true
       },
       {
         "id": 14,
@@ -152,7 +153,7 @@
         "email": "nina@gmail.com",
         "age": 29,
         "position": "UI/UX Designer",
-        "isActive": "false"
+        "isActive": false
       }
     ]
   }

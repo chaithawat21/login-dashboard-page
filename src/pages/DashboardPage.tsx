@@ -12,6 +12,7 @@ interface User {
   email: string;
   age: number;
   position: string;
+  isActive: boolean;
 }
 
 
@@ -26,18 +27,20 @@ const DashboardPage = () => {
 
   // Filter users based on the search term
   useEffect(() => {
-    const filtered = users.filter((user) =>
-      (user.firstname.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      user.lastname.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      user.position.toLowerCase().includes(searchTerm.toLowerCase())) &&
-      user.id !== loggedInUser?.id
-    );
+      const filtered = users.filter((user) =>
+         // Only show active users
+        (user.firstname.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        user.lastname.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        user.position.toLowerCase().includes(searchTerm.toLowerCase())) &&
+        user.id !== loggedInUser?.id// Exclude logged-in user
+      );
     setFilteredUsers(filtered);
   }, [searchTerm, loggedInUser, users]);
 
   // Calculate the average age of all users
   useEffect(() => {
-    const totalAge = users.reduce((sum, user) => sum + user.age, 0);
+    const activeUsers = users.filter(user => user.isActive);
+    const totalAge = activeUsers.reduce((sum, user) => sum + user.age, 0);
     const avgAge = totalAge / users.length;
     setAverageAge(avgAge);
   }, [users]);
@@ -55,6 +58,7 @@ const DashboardPage = () => {
           <p className="text-user"><strong>Email:</strong> {loggedInUser?.email}</p>
           <p className="text-user"><strong>Position:</strong> {loggedInUser?.position}</p>
           <p className="text-user"><strong>Age:</strong> {loggedInUser?.age}</p>
+          <p><strong>Status:</strong> {selectedUser?.isActive ? 'Active' : 'Inactive'}</p>
         </div>
         <button onClick={logout} className="button-logout">
           LOGOUT
@@ -88,8 +92,10 @@ const DashboardPage = () => {
                 className={`list-directory ${selectedUser?.id === user.id ? 'selected' : ''}`}
                 key={user.id} 
                 onClick={() => handleUserClick(user)}
+                style={{ opacity: user.isActive ? 1 : 0.5 }}
+                
                 >
-                  <h3 className="list-directory-name">{user.firstname} {user.lastname}</h3>
+                  <h3 className="list-directory-name" >{user.firstname} {user.lastname}</h3>
                 </li>
               ))}
             </ul>
