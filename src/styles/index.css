@@ -8,34 +8,25 @@
 :root {
     --white: #F5F5F5;
     --black: #121212;
-    --blacklight: #313131;
     --red: #f44336;
-    --blue: #a0b3cc;
     --green: #65b075;
     --gray: #757d7e;
     --graylight: #eeeeee;
 }
-
 body {
     min-height: 100vh;
     line-height: 1.5;
     font-family: "Roboto";
     background-color: var(--white);
 }
-
 ul,ol {
     list-style: none;
 }
-
 button {
     border: none;
     background: none;
 }
-
 input {
     border: none;
     outline: none;
-}
-strong {
-    color: var(--black);
 }

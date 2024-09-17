@@ -1,8 +1,8 @@
-import { useState, useCallback } from "react";
-import mockData from '../data/mockData.json';
-import '../styles/LoginPage.css'
-import eyeShow from '../assets/login/eye-show.png'
-import eyeHide from '../assets/login/eye-hide.png'
+import { useState } from "react";
+import mockData from "../data/mockData.json";
+import "../styles/LoginPage.css";
+import eyeShow from "../assets/login/eye-show.png";
+import eyeHide from "../assets/login/eye-hide.png";
 import { useAuth } from "../hooks/useAuth";
 import { comparePassword } from "../utils/bcrypt";
 
@@ -24,8 +24,8 @@ const LoginPage = () => {
     emptyPassword: 'Password is required'
   };
 
-  
-  const handleLogin = useCallback(async (e: React.FormEvent) => {
+// click login
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
 
@@ -33,28 +33,29 @@ const LoginPage = () => {
       // Validate empty fields
       if (!username && !password) {
         setError(errorMessages.emptyFields);
-        setLoading(false)
+        setLoading(false);
         return;
       }
       if (!username) {
         setError(errorMessages.emptyUsername);
-        setLoading(false)
+        setLoading(false);
         return;
       }
       if (!password) {
         setError(errorMessages.emptyPassword);
-        setLoading(false)
+        setLoading(false);
         return;
       }
 
-      // Find user from mock data
+      // find user from mock data
       const user = mockData.users.find((user) => user.username === username);
 
-     
+
       if (user) {
-        const passwordMatch = await comparePassword(password, user.password); // Compare hashed password
+        // compare hashed password
+        const passwordMatch = await comparePassword(password, user.password);
         if (passwordMatch) {
-          login(user); 
+          login(user);
         } else {
           setError(errorMessages.invalidCredentials);
         }
@@ -63,13 +64,13 @@ const LoginPage = () => {
       }
     } catch (err) {
       console.error('Error during login:', err);
-      setError('An unexpected error occurred. Please try again.')
+      setError('An unexpected error occurred. Please try again.');
     } finally {
       setLoading(false);
     }
-  }, [username, password, login]);
+  };
 
-// Show or hide password
+  // show or hide password
   const handleShowPassword = () => {
     setShowPassword((prevState) => !prevState);
   };
@@ -81,45 +82,41 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container-login">
       <h1 className="text-login">LOGIN</h1>
       <form onSubmit={handleLogin} className="form-login">
-
-      <div className={`container-username ${error && (error.includes(errorMessages.emptyUsername) || error.includes(errorMessages.emptyFields) || error.includes(errorMessages.invalidCredentials)) && 'error-username'}`}>
-        <input
-          type="text"
-          id="username"
-          placeholder="Username"
-          className="input-username"
-
-          value={username}
-          onChange={(e) => handleInputChange(setUsername, e.target.value)}
-          autoComplete="off" 
-           autoFocus
-        />
-      </div>
-
-      <div className={`container-password ${error && (error.includes(errorMessages.emptyPassword) || error.includes(errorMessages.emptyFields) || error.includes(errorMessages.invalidCredentials)) && 'error-password'}`}>
-        <input
-          type={showPassword ? "text" : "password"}
-          id="password"
-          placeholder="Password"
-          className="input-password"
-          value={password}
-          onChange={(e) => handleInputChange(setPassword, e.target.value)}
-          autoComplete="off" 
-        />
-        <img
-          onClick={handleShowPassword}
-          src={showPassword ? eyeHide : eyeShow}
-          alt={showPassword ? "Hide Password" : "Show Password"}
-          className="icon-eye"
-        />
-      </div>
-      {error ? <p className="text-error">{error}</p> : <p className="text-error">&nbsp;</p>}
-      <button type="submit" className="button-submit">{loading ? 'LOADING...' : 'SUBMIT'}</button>
-      
-    </form>
+      <label htmlFor="username" className="label-head">USERNAME</label>
+        <div className={`container-username ${error && (error.includes(errorMessages.emptyUsername) || error.includes(errorMessages.emptyFields) || error.includes(errorMessages.invalidCredentials)) && 'error-username'}`}>
+          <input
+            type="text"
+            id="username"
+            className="input-username"
+            value={username}
+            onChange={(e) => handleInputChange(setUsername, e.target.value)}
+            autoComplete="off"
+            autoFocus
+          />
+        </div>
+        <label htmlFor="password" className="label-head">PASSWORD</label>
+        <div className={`container-password ${error && (error.includes(errorMessages.emptyPassword) || error.includes(errorMessages.emptyFields) || error.includes(errorMessages.invalidCredentials)) && 'error-password'}`}>
+          <input
+            type={showPassword ? "text" : "password"}
+            id="password"
+            className="input-password"
+            value={password}
+            onChange={(e) => handleInputChange(setPassword, e.target.value)}
+            autoComplete="off"
+          />
+          <img
+            onClick={handleShowPassword}
+            src={showPassword ? eyeHide : eyeShow}
+            alt={showPassword ? "Hide Password" : "Show Password"}
+            className="icon-eye"
+          />
+        </div>
+        {error ? <p className="text-error">{error}</p> : <p className="text-error">&nbsp;</p>}
+        <button type="submit" className="button-submit">{loading ? 'LOADING' : 'SUBMIT'}</button>
+      </form>
     </div >
   )
 }
