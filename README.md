@@ -29,7 +29,7 @@ or
 
 ## Installation
 
-### Setup
+### Se tup
 
 1. Clone this repository:
 
