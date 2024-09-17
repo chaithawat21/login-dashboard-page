@@ -1,4 +1,4 @@
-import { User } from '../types/userTypes';
+import { User } from "../types/userTypes";
 
 interface UserListProps {
   filteredUsers: User[];
