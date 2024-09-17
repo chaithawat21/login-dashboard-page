@@ -1,160 +1,158 @@
 {
-    "users": [
-      {
-        "id": 1,
-        "username": "alice",
-        "password": "$2y$10$UYGk/uy6BbUvlPgF7f7u6uxfrXgs1TMm4VpiXBu4ntDyJ4sqAgWbm",
-        "firstname": "Alice",
-        "lastname": "Johnson",
-        "email": "alice@gmail.com",
-        "age": 25,
-        "position": "Software Engineer",
-        "isActive": true
-        
-      },
-      {
-        "id": 2,
-        "username": "bob",
-        "password": "$2y$10$VPkDYTweNu9wvScOm.T4d.vfjGFPwg6IHqRh.6FdsQasgGGF8cdLO",
-        "firstname": "Bob",
-        "lastname": "Smith",
-        "email": "bob@gmail.com",
-        "age": 30,
-        "position": "Software Engineer",
-        "isActive": true
-      },
-      {
-        "id": 3,
-        "username": "charlie",
-        "password": "$2y$10$ePynWNGRjTR8EBgBGbOKn.WdGh3dN0ZB1wBHffCYsAi0q7kAnwLNG",
-        "firstname": "Charlie",
-        "lastname": "Brown",
-        "email": "charlie@gmail.com",
-        "age": 28,
-        "position": "UI/UX Designer",
-        "isActive": false
-      },
-      {
-        "id": 4,
-        "username": "daisy",
-        "password": "$2y$10$fH3s/ODtIKcLwjQRrOoeLOJ7VTmiikZ7tyxtbRwSc3uK/RnLRf/Bm",
-        "firstname": "Daisy",
-        "lastname": "Green",
-        "email": "daisy@gmail.com",
-        "age": 22,
-        "position": "Software Engineer",
-        "isActive": true
-      },
-      {
-        "id": 5,
-        "username": "edward",
-        "password": "$2y$10$KGfw3HLdKBSga8cewVWyiOZOdJQZGoITy0D7NTzxqTxFfJ5Ev68S6",
-        "firstname": "Edward",
-        "lastname": "White",
-        "email": "edward@gmail.com",
-        "age": 27,
-        "position": "Software Engineer",
-        "isActive": true
-      },
-      {
-        "id": 6,
-        "username": "fiona",
-        "password": "$2y$10$eiI3LosgBbL02hLfeIAdfOR6m2jDHpcrB1pl7kgLFEs/7u/g1oIHy",
-        "firstname": "Fiona",
-        "lastname": "Black",
-        "email": "fiona@gmail.com",
-        "age": 29,
-        "position": "Project Manager",
-        "isActive": false
-      },
-      {
-        "id": 7,
-        "username": "george",
-        "password": "$2y$10$p5.F05NDGC7gKVq6453s8uPi9ozWhkOY3H8Qwu6df/F1GsFHne24u",
-        "firstname": "George",
-        "lastname": "Miller",
-        "email": "george@gmail.com",
-        "age": 35,
-        "position": "Project Manager",
-        "isActive": true
-      },
-      {
-        "id": 8,
-        "username": "hannah",
-        "password": "$2y$10$6LRekj6nXe20nRCmcMYNweBDsmLtAKkhu9JF8f7Ct9dPXTaorYE.i",
-        "firstname": "Hannah",
-        "lastname": "Davis",
-        "email": "hannah@gmail.com",
-        "age": 24,
-        "position": "Project Manager",
-        "isActive": true
-      },
-      {
-        "id": 9,
-        "username": "ian",
-        "password": "$2y$10$S0.7/kBWqFIk3xWRb1lvBOhmTe1pBI7oB7Sky8snYYLXWmuGIQiru",
-        "firstname": "Ian",
-        "lastname": "Wilson",
-        "email": "ian@gmail.com",
-        "age": 32,
-        "position": "UI/UX Designer",
-        "isActive": true
-      },
-      {
-        "id": 10,
-        "username": "julia",
-        "password": "$2y$10$p9n0C5i6H2H7KWTmgt2ajumz02wiwOvbf1D11dXhHUs3WaySPseEK",
-        "firstname": "Julia",
-        "lastname": "Taylor",
-        "email": "julia@gmail.com",
-        "age": 26,
-        "position": "Software Engineer",
-        "isActive": true
-      },
-      {
-        "id": 11,
-        "username": "kevin",
-        "password": "$2y$10$5F6CpqmXaKLiOXowt0BVGeoYTbJsgxvj./riWega53ts4Tt9EpQDi",
-        "firstname": "Kevin",
-        "lastname": "Brown",
-        "email": "kevin@gmail.com",
-        "age": 38,
-        "position": "Software Engineer",
-        "isActive": false
-      },
-      {
-        "id": 12,
-        "username": "lily",
-        "password": "$2y$10$JoxH7u3MpyUMABSdE4X7eeFNGa3SGfCSfmr8ApjY4yUAjpiXwVMyq",
-        "firstname": "Lily",
-        "lastname": "Adams",
-        "email": "lily@gmail.com",
-        "age": 23,
-        "position": "Software Engineer",
-        "isActive": false
-      },
-      {
-        "id": 13,
-        "username": "michael",
-        "password": "$2y$10$UcV9t89JIIuJDCR28E6cxeraT2ehq/2/vYjENTZzXTXUQAwQsya4W",
-        "firstname": "Michael",
-        "lastname": "Roberts",
-        "email": "michael@gmail.com",
-        "age": 40,
-        "position": "UI/UX Designer",
-        "isActive": true
-      },
-      {
-        "id": 14,
-        "username": "nina",
-        "password": "$2y$10$d9ACnXkk2l.dZ2NJTAFRx.gaR88kzim1jPd1QqQc39N5bI74PMLb.",
-        "firstname": "Nina",
-        "lastname": "Martinez",
-        "email": "nina@gmail.com",
-        "age": 29,
-        "position": "UI/UX Designer",
-        "isActive": false
-      }
-    ]
-  }
-  
+  "users": [
+    {
+      "id": 1,
+      "username": "alice",
+      "password": "$2y$10$UYGk/uy6BbUvlPgF7f7u6uxfrXgs1TMm4VpiXBu4ntDyJ4sqAgWbm",
+      "firstname": "Alice",
+      "lastname": "Johnson",
+      "email": "alice@gmail.com",
+      "age": 25,
+      "position": "Software Engineer",
+      "isActive": true
+    },
+    {
+      "id": 2,
+      "username": "bob",
+      "password": "$2y$10$VPkDYTweNu9wvScOm.T4d.vfjGFPwg6IHqRh.6FdsQasgGGF8cdLO",
+      "firstname": "Bob",
+      "lastname": "Smith",
+      "email": "bob@gmail.com",
+      "age": 30,
+      "position": "Software Engineer",
+      "isActive": true
+    },
+    {
+      "id": 3,
+      "username": "charlie",
+      "password": "$2y$10$ePynWNGRjTR8EBgBGbOKn.WdGh3dN0ZB1wBHffCYsAi0q7kAnwLNG",
+      "firstname": "Charlie",
+      "lastname": "Brown",
+      "email": "charlie@gmail.com",
+      "age": 28,
+      "position": "UI/UX Designer",
+      "isActive": false
+    },
+    {
+      "id": 4,
+      "username": "daisy",
+      "password": "$2y$10$fH3s/ODtIKcLwjQRrOoeLOJ7VTmiikZ7tyxtbRwSc3uK/RnLRf/Bm",
+      "firstname": "Daisy",
+      "lastname": "Green",
+      "email": "daisy@gmail.com",
+      "age": 22,
+      "position": "Software Engineer",
+      "isActive": true
+    },
+    {
+      "id": 5,
+      "username": "edward",
+      "password": "$2y$10$KGfw3HLdKBSga8cewVWyiOZOdJQZGoITy0D7NTzxqTxFfJ5Ev68S6",
+      "firstname": "Edward",
+      "lastname": "White",
+      "email": "edward@gmail.com",
+      "age": 27,
+      "position": "Software Engineer",
+      "isActive": true
+    },
+    {
+      "id": 6,
+      "username": "fiona",
+      "password": "$2y$10$eiI3LosgBbL02hLfeIAdfOR6m2jDHpcrB1pl7kgLFEs/7u/g1oIHy",
+      "firstname": "Fiona",
+      "lastname": "Black",
+      "email": "fiona@gmail.com",
+      "age": 29,
+      "position": "Project Manager",
+      "isActive": false
+    },
+    {
+      "id": 7,
+      "username": "george",
+      "password": "$2y$10$p5.F05NDGC7gKVq6453s8uPi9ozWhkOY3H8Qwu6df/F1GsFHne24u",
+      "firstname": "George",
+      "lastname": "Miller",
+      "email": "george@gmail.com",
+      "age": 35,
+      "position": "Project Manager",
+      "isActive": true
+    },
+    {
+      "id": 8,
+      "username": "hannah",
+      "password": "$2y$10$6LRekj6nXe20nRCmcMYNweBDsmLtAKkhu9JF8f7Ct9dPXTaorYE.i",
+      "firstname": "Hannah",
+      "lastname": "Davis",
+      "email": "hannah@gmail.com",
+      "age": 24,
+      "position": "Project Manager",
+      "isActive": true
+    },
+    {
+      "id": 9,
+      "username": "ian",
+      "password": "$2y$10$S0.7/kBWqFIk3xWRb1lvBOhmTe1pBI7oB7Sky8snYYLXWmuGIQiru",
+      "firstname": "Ian",
+      "lastname": "Wilson",
+      "email": "ian@gmail.com",
+      "age": 32,
+      "position": "UI/UX Designer",
+      "isActive": true
+    },
+    {
+      "id": 10,
+      "username": "julia",
+      "password": "$2y$10$p9n0C5i6H2H7KWTmgt2ajumz02wiwOvbf1D11dXhHUs3WaySPseEK",
+      "firstname": "Julia",
+      "lastname": "Taylor",
+      "email": "julia@gmail.com",
+      "age": 26,
+      "position": "Software Engineer",
+      "isActive": true
+    },
+    {
+      "id": 11,
+      "username": "kevin",
+      "password": "$2y$10$5F6CpqmXaKLiOXowt0BVGeoYTbJsgxvj./riWega53ts4Tt9EpQDi",
+      "firstname": "Kevin",
+      "lastname": "Brown",
+      "email": "kevin@gmail.com",
+      "age": 38,
+      "position": "Software Engineer",
+      "isActive": false
+    },
+    {
+      "id": 12,
+      "username": "lily",
+      "password": "$2y$10$JoxH7u3MpyUMABSdE4X7eeFNGa3SGfCSfmr8ApjY4yUAjpiXwVMyq",
+      "firstname": "Lily",
+      "lastname": "Adams",
+      "email": "lily@gmail.com",
+      "age": 23,
+      "position": "Software Engineer",
+      "isActive": false
+    },
+    {
+      "id": 13,
+      "username": "michael",
+      "password": "$2y$10$UcV9t89JIIuJDCR28E6cxeraT2ehq/2/vYjENTZzXTXUQAwQsya4W",
+      "firstname": "Michael",
+      "lastname": "Roberts",
+      "email": "michael@gmail.com",
+      "age": 40,
+      "position": "UI/UX Designer",
+      "isActive": true
+    },
+    {
+      "id": 14,
+      "username": "nina",
+      "password": "$2y$10$d9ACnXkk2l.dZ2NJTAFRx.gaR88kzim1jPd1QqQc39N5bI74PMLb.",
+      "firstname": "Nina",
+      "lastname": "Martinez",
+      "email": "nina@gmail.com",
+      "age": 29,
+      "position": "UI/UX Designer",
+      "isActive": false
+    }
+  ]
+}

@@ -6,15 +6,15 @@ interface UserListProps {
   handleUserClick: (user: User) => void;
 }
 
-const UserList = ({ filteredUsers, selectedUser, handleUserClick }:UserListProps) => {
+const UserList = ({ filteredUsers, selectedUser, handleUserClick }: UserListProps) => {
   return (
     <div className="container-directory">
       {filteredUsers.length > 0 ? (
         <ul>
           {filteredUsers.map((user) => (
-            <li 
+            <li
               className="list-directory"
-              key={user.id} 
+              key={user.id}
               onClick={() => handleUserClick(user)}
             >
               <h3 className={`list-directory-name ${selectedUser?.id === user.id ? 'selected' : ''}`}>{user.firstname} {user.lastname}</h3>

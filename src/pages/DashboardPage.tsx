@@ -5,6 +5,7 @@ import "../styles/DashboardPage.css";
 import { useAuth } from "../hooks/useAuth";
 import UserProfile from "../components/UserProfile";
 import Search from "../components/Search";
+import FilterOption from "../components/FilterOption"
 import UserList from "../components/UserList";
 import UserDetails from "../components/UserDetails";
 import UserStats from "../components/UserStats";
@@ -15,6 +16,7 @@ const DashboardPage = () => {
   const { loggedInUser, logout } = useAuth();
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [filteredUsers, setFilteredUsers] = useState<User[]>([]);
+  const [filterOption, setFilterOption] = useState<string>('all');
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
   const [averageAge, setAverageAge] = useState<number>(0);
   const [totalActiveUsers, setTotalActiveUsers] = useState<number>(0);
@@ -24,14 +26,23 @@ const DashboardPage = () => {
 
   // users based on the search term
   useEffect(() => {
-    const filtered = users.filter((user) =>
+    let filtered = users.filter((user) =>
       (user.firstname.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        user.lastname.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        user.position.toLowerCase().includes(searchTerm.toLowerCase())) &&
+        user.lastname.toLowerCase().includes(searchTerm.toLowerCase())) &&
       user.id !== loggedInUser?.id// Exclude logged-in user
     );
+
+    // apply filter based on filterOption
+    if (filterOption === 'active') {
+      filtered = filtered.filter((user) => user.isActive);
+    } else if (filterOption === 'inactive') {
+      filtered = filtered.filter((user) => !user.isActive);
+    } else if (filterOption !== 'all') {
+      filtered = filtered.filter((user) => user.position === filterOption);
+    }
+
     setFilteredUsers(filtered);
-  }, [searchTerm, loggedInUser, users]);
+  }, [searchTerm, filterOption, loggedInUser, users]);
 
   // calculate the average age of all users
   useEffect(() => {
@@ -61,10 +72,16 @@ const DashboardPage = () => {
         <UserDetails selectedUser={selectedUser} />
       </div>
       <div className="container-list-user">
-        <Search
-          searchTerm={searchTerm}
-          setSearchTerm={setSearchTerm}
-        />
+        <div className="container-list-user-search">
+          <Search
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+          />
+          <FilterOption
+            filterOption={filterOption}
+            setFilterOption={setFilterOption}
+          />
+        </div>
         <UserList
           filteredUsers={filteredUsers}
           selectedUser={selectedUser}

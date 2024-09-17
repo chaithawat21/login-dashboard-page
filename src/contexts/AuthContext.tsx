@@ -12,12 +12,12 @@ interface User {
 }
 
 interface AuthContextType {
-    isLogin: boolean;
-    loggedInUser: User | null;
-    login: (user: User) => void;
-    logout: () => void;
-  }
-  
+  isLogin: boolean;
+  loggedInUser: User | null;
+  login: (user: User) => void;
+  logout: () => void;
+}
+
 // Create the AuthContext
 export const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
@@ -36,21 +36,21 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       setLoggedInUser(JSON.parse(storedUser));
     }
   }, []);
-  
+
   const login = (user: User) => {
     setIsLogin(true);
     setLoggedInUser(user);
     localStorage.setItem("isLogin", "true");
     localStorage.setItem("loggedInUser", JSON.stringify(user));
   };
-  
+
   const logout = () => {
     setIsLogin(false);
     setLoggedInUser(null);
     localStorage.removeItem("isLogin");
     localStorage.removeItem("loggedInUser");
   };
-  
+
   return (
     <AuthContext.Provider value={{ isLogin, loggedInUser, login, logout }}>
       {children}
