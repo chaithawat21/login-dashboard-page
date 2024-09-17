@@ -7,8 +7,6 @@ import { useAuth } from "../hooks/useAuth";
 import { comparePassword } from "../utils/bcrypt";
 
 
-
-
 const LoginPage = () => {
   const { login } = useAuth();
   const [username, setUsername] = useState<string>('');
@@ -24,7 +22,7 @@ const LoginPage = () => {
     emptyPassword: 'Password is required'
   };
 
-// click login
+  // click login
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
@@ -49,7 +47,6 @@ const LoginPage = () => {
 
       // find user from mock data
       const user = mockData.users.find((user) => user.username === username);
-
 
       if (user) {
         // compare hashed password
@@ -85,7 +82,7 @@ const LoginPage = () => {
     <div className="container-login">
       <h1 className="text-login">LOGIN</h1>
       <form onSubmit={handleLogin} className="form-login">
-      <label htmlFor="username" className="label-head">USERNAME</label>
+        <label htmlFor="username" className="label-head">USERNAME</label>
         <div className={`container-username ${error && (error.includes(errorMessages.emptyUsername) || error.includes(errorMessages.emptyFields) || error.includes(errorMessages.invalidCredentials)) && 'error-username'}`}>
           <input
             type="text"
@@ -118,7 +115,7 @@ const LoginPage = () => {
         <button type="submit" className="button-submit">{loading ? 'LOADING' : 'SUBMIT'}</button>
       </form>
     </div >
-  )
+  );
 }
 
-export default LoginPage
+export default LoginPage;
