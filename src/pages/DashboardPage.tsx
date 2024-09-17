@@ -72,8 +72,14 @@ const DashboardPage = () => {
     <UserDetails selectedUser={selectedUser} />
     </div>
     <div className="container-list-user">
-      <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      <UserList filteredUsers={filteredUsers} selectedUser={selectedUser} handleUserClick={handleUserClick} />
+      <Search 
+      searchTerm={searchTerm} 
+      setSearchTerm={setSearchTerm} />
+      <UserList 
+      filteredUsers={filteredUsers}
+      selectedUser={selectedUser} 
+      handleUserClick={handleUserClick} 
+      />
     </div>
     <UserStats 
     totalUsers={users.length} 
