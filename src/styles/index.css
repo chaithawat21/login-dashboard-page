@@ -8,9 +8,12 @@
 :root {
     --white: #F5F5F5;
     --black: #121212;
-    --red: #F05454;
-    --blue: #30475E;
-    --gray: #cdcdcd;
+    --blacklight: #313131;
+    --red: #f44336;
+    --blue: #a0b3cc;
+    --green: #65b075;
+    --gray: #757d7e;
+    --graylight: #eeeeee;
 }
 
 body {
@@ -32,4 +35,7 @@ button {
 input {
     border: none;
     outline: none;
+}
+strong {
+    color: var(--black);
 }

@@ -19,6 +19,8 @@ const DashboardPage = () => {
   const [filteredUsers, setFilteredUsers] = useState<User[]>([]);
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
   const [averageAge, setAverageAge] = useState<number>(0);
+  const [totalActiveUsers, setTotalActiveUsers] = useState<number>(0);
+  const [totalInactiveUsers, setTotalInactiveUsers] = useState<number>(0);
   const users = mockData.users;
 
 
@@ -36,10 +38,19 @@ const DashboardPage = () => {
 
   // Calculate the average age of all users
   useEffect(() => {
-    const activeUsers = users.filter(user => user.isActive);
-    const totalAge = activeUsers.reduce((sum, user) => sum + user.age, 0);
+    const totalAge = users.reduce((sum, user) => sum + user.age, 0);
     const avgAge = totalAge / users.length;
     setAverageAge(avgAge);
+    
+  }, [users]);
+
+   // Calculate total active and inactive users
+  useEffect(() => {
+    const activeUsersCount = users.filter((user) => user.isActive).length;
+    const inactiveUsersCount = users.length - activeUsersCount;
+
+    setTotalActiveUsers(activeUsersCount);
+    setTotalInactiveUsers(inactiveUsersCount);
   }, [users]);
 
   const handleUserClick = useCallback((user: User) => {
@@ -56,13 +67,20 @@ const DashboardPage = () => {
         </div>
         <img src={signOutIcon} alt="sign-out" onClick={logout} className="img-logout" />
       </nav>
-    <UserProfile loggedInUser={loggedInUser} selectedUser={selectedUser} />
-    <div className="container-search">
-      <UserDetails selectedUser={selectedUser} />
+      <div className="container-user">
+    <UserProfile loggedInUser={loggedInUser} />
+    <UserDetails selectedUser={selectedUser} />
+    </div>
+    <div className="container-list-user">
       <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <UserList filteredUsers={filteredUsers} selectedUser={selectedUser} handleUserClick={handleUserClick} />
     </div>
-    <UserStats totalUsers={users.length} averageAge={averageAge} />
+    <UserStats 
+    totalUsers={users.length} 
+    averageAge={averageAge} 
+    totalActiveUsers={totalActiveUsers} 
+    totalInactiveUsers={totalInactiveUsers} 
+    />
   </main>
   );
 }

@@ -9,11 +9,13 @@ interface UserDetailsProps {
     
     return (
       <div className="container-directory-details">
-        <h2 className="text-search-head">User Profile</h2>
-        <p className="text-search-detail"><strong>Full Name:</strong> {selectedUser.firstname} {selectedUser.lastname}</p>
-        <p className="text-search-detail"><strong>Email:</strong> {selectedUser.email}</p>
-        <p className="text-search-detail"><strong>Position:</strong> {selectedUser.position}</p>
-        <p className="text-search-detail"><strong>Age:</strong> {selectedUser.age}</p>
+        <div className='container-directory-head'>
+        <h2 className="text-directory-head">{selectedUser.firstname} {selectedUser.lastname}</h2>
+        <span className={selectedUser?.isActive ? 'span-active' : 'span-inactive'}>{selectedUser?.isActive ? 'Active' : 'Inactive'}</span>
+        </div>
+        <p className="text-directory-detail">Email: {selectedUser.email}</p>
+        <p className="text-directory-detail">Position: {selectedUser.position}</p>
+        <p className="text-directory-detail">Age: {selectedUser.age}</p>
       </div>
     );
   }

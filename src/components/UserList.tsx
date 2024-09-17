@@ -13,12 +13,12 @@ const UserList = ({ filteredUsers, selectedUser, handleUserClick }:UserListProps
         <ul>
           {filteredUsers.map((user) => (
             <li 
-              className={`list-directory ${selectedUser?.id === user.id ? 'selected' : ''}`}
+              className="list-directory"
               key={user.id} 
               onClick={() => handleUserClick(user)}
-              style={{ opacity: user.isActive ? 1 : 0.5 }}
             >
-              <h3 className="list-directory-name">{user.firstname} {user.lastname}</h3>
+              <h3 className={`list-directory-name ${selectedUser?.id === user.id ? 'selected' : ''}`}>{user.firstname} {user.lastname}</h3>
+              <span className={user?.isActive ? 'span-active' : 'span-inactive'}>{user?.isActive ? 'Active' : 'Inactive'}</span>
             </li>
           ))}
         </ul>

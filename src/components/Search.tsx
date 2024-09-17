@@ -1,4 +1,4 @@
-
+import searchIcon from '../assets/dashboard/search.svg'
 
 interface SearchProps {
   searchTerm: string;
@@ -7,7 +7,8 @@ interface SearchProps {
 
 const Search = ({ searchTerm, setSearchTerm }:SearchProps) => {
   return (
-    <div className="search">
+    <div className="container-search">
+      <img src={searchIcon} alt="search" className='img-search'/>
       <input
         type="text"
         placeholder="Search"
